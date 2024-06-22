@@ -1,4 +1,2 @@
-### [IDE 설치하기]
-1. https://flutter.dev
-2. Get Started / Install / Mac or Widow / Android / Download and Install / Stable 버전 다운로드
-3. 
+# 2024-06-22
+#### [Dart 문법 학습](https://www.youtube.com/watch?v=2qMZ9bvoJZk&t=1012s)
