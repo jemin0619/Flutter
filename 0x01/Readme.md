@@ -23,3 +23,36 @@
 
 ## Exeption_P
   - 예외처리
+
++ Stream와 Future
+  - Future: 단일 비동기 작업이 완료될 때 결과를 필요로 할 때 사용
+  - Stream: 비동기적으로 여러 값이나 이벤트를 처리해야 할 때 사용
+
+```Dart
+Future<void> printDelayed(String message) async {
+  await Future.delayed(Duration(seconds: 2));
+  print(message);
+}
+
+void main() {
+  print('시작');
+  printDelayed('2초 후 출력');
+  print('끝');
+}
+```
+
+```Dart
+Stream<int> timedCounter(Duration interval, [int? maxCount]) async* {
+  int i = 0;
+  while (maxCount == null || i < maxCount) {
+    await Future.delayed(interval);
+    yield i++;
+  }
+}
+
+void main() async {
+  await for (int i in timedCounter(Duration(seconds: 1), 5)) {
+    print(i);  // 0, 1, 2, 3, 4를 순차적으로 1초마다 출력
+  }
+}
+```
