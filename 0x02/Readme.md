@@ -1,6 +1,6 @@
 ## [플러터(Flutter)로 앱출시까지 5. 앱에 라이브러리 적용하기](https://www.youtube.com/watch?v=D096ovUxuh4)
 
-+ ### 앱에 라이브러리 적용시키기
++ ## 앱에 라이브러리 적용시키기
   - pubspec에서 필요한 라이브러리를 찾을 수 있다.
   - pubspec.yaml 파일의 dev_dependencies에 추가할 파일을 넣으면 된다.
   - [english_words 라이브러리](https://pub.dev/packages/english_words)
@@ -12,12 +12,12 @@ dev_dependencies:
   english_words: ^4.0.0
 ```
 
-+ ### StatefulWidget과 StatelessWidget
++ ## StatefulWidget과 StatelessWidget
   - StatelessWidget : 변수에 변화가 없음 (화면이 정적임)
   - StatefulWideget : 변수에 변화가 존재 (화면이 움직임)
   - StatelessWidget이 기능이 더 적지만 성능이 뛰어나다.
  
-+ ### english_words 사용해보기
++ ## english_words 사용해보기
 ``` main.dart
 import 'package:flutter/material.dart'; 
 import 'package:english_words/english_words.dart'; //외부 라이브러리 사용
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget{
 }
 ```
 
-+ ### StatefulWidget 사용하기
++ ## StatefulWidget 사용하기
 ``` main.dart
 import 'package:flutter/material.dart'; 
 import 'package:english_words/english_words.dart';
