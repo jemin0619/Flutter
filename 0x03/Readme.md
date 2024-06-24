@@ -134,19 +134,26 @@ class RandomWordsState extends State<RandomWords>{
   //body는 앱의 주요 콘텐츠를 정의하며 _buildSuggestions 매서드를 호출한다.
 
 
-  Widget _buildSuggestions(){
+  Widget _buildSuggestions() {
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
-      itemBuilder: (context, i){
-        if(i.isOdd) return Divider();
-
+      itemBuilder: (context, i) {
+        // i는 0부터 시작하여 1씩 증가합니다.
+        // i가 홀수이면 구분선(Divider)을 반환합니다.
+        if (i.isOdd) return Divider();
+  
+        // 실제 데이터 리스트 _suggestions의 인덱스를 계산합니다.
         final index = i ~/ 2;
-        if(index >= _suggestions.length){
+        // index가 _suggestions의 길이보다 크거나 같으면 새로운 단어 쌍을 추가합니다.
+        if (index >= _suggestions.length) {
           _suggestions.addAll(generateWordPairs().take(10));
         }
+        // _buildRow 메서드를 호출하여 현재 인덱스에 해당하는 단어 쌍을 표시하는 ListTile 위젯을 반환합니다.
         return _buildRow(_suggestions[index]);
-      });
+      },
+    );
   }
+
 
   //ListView.builder을 사용해 스크롤 가능한 리스트를 생성하는 매서드.
   //ListView.builder는 필요할 때마다 아이템을 동적으로 생성한다.
