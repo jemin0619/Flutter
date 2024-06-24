@@ -43,3 +43,44 @@ class MyApp extends StatelessWidget{
   }
 }
 ```
+
++ ### StatefulWidget 사용하기
+``` main.dart
+import 'package:flutter/material.dart'; 
+import 'package:english_words/english_words.dart';
+
+void main() => runApp(MyApp());
+
+//StatelessWidget은 화면에 표시된 것들 (변수)가 변하지 않는다.
+//StatefulWidget을 만드려면 클래스 두 개를 만들어야 한다.
+
+class RandomWordsState extends State<RandomWords>{
+  @override
+  Widget build(BuildContext context) {
+    final wordPair = WordPair.random();
+    return Text(wordPair.asPascalCase);
+  }
+}
+
+class RandomWords extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() => RandomWordsState();
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      title: 'Welcome To Flutter',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome To Flutter'),
+        ),
+        body: Center(
+          child: RandomWords(),
+        ),
+      ),
+    );
+  }
+}
+```
