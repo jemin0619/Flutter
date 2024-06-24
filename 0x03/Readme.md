@@ -154,10 +154,12 @@ class RandomWordsState extends State<RandomWords>{
     );
   }
 
-
   //ListView.builder을 사용해 스크롤 가능한 리스트를 생성하는 매서드.
   //ListView.builder는 필요할 때마다 아이템을 동적으로 생성한다.
   //_buildRow 매서드를 반환해 리스트의 각 아이템을 생성한다.
+  //i는 줄어들지 않음.
+  //기본적으로 ListView는 무한 스크롤 페이지를 만들기 위해 사용됨.
+  //화면을 위로 올리면 이전에 생성했는 문자들이 보이고, 화면을 내릴 때에만 i가 증가하고, 증가함에 따라 새로운 문자들을 생성하고 표시합니다.
 
 
   Widget _buildRow(WordPair pair){
